@@ -34,7 +34,8 @@ def cmd_list():
     chips = load_all_personalities()
     if not chips:
         print("No personality chips found.")
-        print("Place .personality.yaml files in personalities/ or ~/.spark/chips/personality/")
+        print("To add one, create a chip file like personalities/artemis.personality.yaml")
+        print("Search locations: personalities/ or ~/.spark/chips/personality/")
         return
 
     print(f"Found {len(chips)} personality chip(s):\n")
