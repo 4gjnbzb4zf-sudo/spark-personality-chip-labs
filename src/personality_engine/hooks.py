@@ -143,8 +143,9 @@ def handle_session_start(input_data: dict[str, Any]) -> dict[str, Any]:
     try:
         from .emotional_state import reset_emotional_state
         reset_emotional_state()
-    except Exception:
-        pass
+    except Exception as exc:
+        import logging
+        logging.getLogger(__name__).debug("emotional state reset failed: %s", exc)
 
     # Build personality context for the agent
     concise = build_personality_context(chip, style="concise")
