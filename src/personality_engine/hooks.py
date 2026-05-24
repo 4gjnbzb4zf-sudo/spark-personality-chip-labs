@@ -63,8 +63,8 @@ def _read_stdin() -> dict[str, Any]:
         raw = sys.stdin.read()
         if raw.strip():
             return json.loads(raw)
-    except (json.JSONDecodeError, OSError):
-        pass
+    except (json.JSONDecodeError, OSError) as exc:
+        sys.stderr.write(f"personality_engine: failed to read hook stdin: {exc}\n")
     return {}
 
 
