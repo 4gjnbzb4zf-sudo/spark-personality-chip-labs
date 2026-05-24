@@ -102,6 +102,7 @@ def cmd_status():
             print(f"  (could not load personality '{pid}')")
     else:
         print("Active personality: None")
+        print("Run 'personality_cli.py activate <personality_id>' to activate one (use 'list' to see available chips).")
 
     print(f"\nActive file: {ACTIVE_FILE}")
     print(f"  Exists: {ACTIVE_FILE.exists()}")
