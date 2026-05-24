@@ -81,7 +81,7 @@ def cmd_deactivate():
     if current:
         print(f"Deactivated personality: {current}")
     else:
-        print("No personality was active.")
+        print("No personality was active. Run 'personality_cli.py activate <id>' to activate one (e.g. 'personality_cli.py activate artemis'), or 'personality_cli.py list' to see available chips.")
 
 
 def cmd_status():
