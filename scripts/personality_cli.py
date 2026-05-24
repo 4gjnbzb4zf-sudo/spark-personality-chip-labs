@@ -152,7 +152,8 @@ def main():
         cmd_bridge()
     else:
         print(f"Unknown command: {command}")
-        print("Available: list, activate, deactivate, status, bridge")
+        print("Run one of: list, activate <personality_id>, deactivate, status, bridge")
+        print("Example: python scripts/personality_cli.py list")
         sys.exit(1)
 
 
