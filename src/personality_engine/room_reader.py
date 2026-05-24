@@ -177,8 +177,9 @@ def _save_trajectory(entries: list[dict]) -> None:
             json.dumps({"entries": trimmed}),
             encoding="utf-8",
         )
-    except OSError:
-        pass
+    except OSError as e:
+        import logging
+        logging.getLogger(__name__).warning("Failed to save room trajectory: %s", e)
 
 
 def _compute_trajectory(entries: list[dict], current_score: float) -> str:
