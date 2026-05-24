@@ -136,8 +136,9 @@ def handle_session_start(input_data: dict[str, Any]) -> dict[str, Any]:
     try:
         from .ib_connector import sync_to_intelligence_builder
         sync_to_intelligence_builder(chip)
-    except Exception:
-        pass  # IB sync failure shouldn't block context injection
+    except Exception as e:
+        import logging
+        logging.getLogger(__name__).debug("IB sync failed: %s", e)  # IB sync failure shouldn't block context injection
 
     # Reset emotional state for fresh session
     try:
