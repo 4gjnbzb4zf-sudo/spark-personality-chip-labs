@@ -129,8 +129,10 @@ def handle_session_start(input_data: dict[str, Any]) -> dict[str, Any]:
     # Write the consciousness bridge for Spark Consciousness to read
     try:
         write_bridge(chip, session_id=session_id)
-    except Exception:
-        pass  # Bridge write failure shouldn't block context injection
+    except Exception as e:
+        import logging
+        logging.getLogger(__name__).warning("Bridge write failed: %s", e)
+        # Bridge write failure shouldn't block context injection
 
     # Sync personality traits to Intelligence Builder's PersonalityEvolver
     try:
