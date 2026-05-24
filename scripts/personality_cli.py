@@ -142,6 +142,7 @@ def main():
     elif command == "activate":
         if len(sys.argv) < 3:
             print("Usage: personality_cli.py activate <personality_id>")
+            print("Run 'personality_cli.py list' to see available personality IDs, e.g. 'personality_cli.py activate artemis'.")
             sys.exit(1)
         cmd_activate(sys.argv[2])
     elif command == "deactivate":
