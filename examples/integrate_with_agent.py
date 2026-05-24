@@ -219,4 +219,5 @@ if __name__ == "__main__":
 
     print("\n" + "=" * 60)
     print("  All examples completed successfully.")
+    print("  Next: copy a snippet from example_6_full_integration() into your agent runner, or see docs/integration.md.")
     print("=" * 60)
